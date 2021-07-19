@@ -50,6 +50,8 @@
         "ioctl.h": "c",
         "cstring": "cpp",
         "ctime": "cpp",
-        "fstream": "cpp"
-    }
+        "fstream": "cpp",
+        "bitset": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
 }

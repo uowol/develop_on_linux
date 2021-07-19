@@ -112,8 +112,8 @@ Edge BSP(int x1, int y1, int x2, int y2, bool flag, int cnt){
         Edge p2 = BSP(t, y1, x2, y2, V, cnt+1); // right room
 
         t_y1 = min(p1.y1, p2.y1);
-        t_y2 = max(p1.y2, p2.y2);
         t_x1 = p1.x2;
+        t_y2 = max(p1.y2, p2.y2);
         t_x2 = p2.x1;
 
         int left, right;

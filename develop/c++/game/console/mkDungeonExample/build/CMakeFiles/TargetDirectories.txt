@@ -1,0 +1,3 @@
+/home/alllhvhla/develop/c++/game/console/participate/build/CMakeFiles/rebuild_cache.dir
+/home/alllhvhla/develop/c++/game/console/participate/build/CMakeFiles/edit_cache.dir
+/home/alllhvhla/develop/c++/game/console/participate/build/CMakeFiles/Dungeon.dir
