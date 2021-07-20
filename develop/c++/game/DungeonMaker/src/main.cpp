@@ -60,14 +60,8 @@ int main(){
                 cout << dungeon.getStringMap() << endl;
                 break;
             default:
-                // dungeon(0,0) = '!';
-                // system("clear");
-                // cout << dungeon.getStringMap() << endl;
                 break;
         }
-        // system("clear");
-        // cout << dungeon.getStringMap() << endl;
-        // getchar();
     }
     
     // 던전 출력
