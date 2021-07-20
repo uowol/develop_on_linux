@@ -3,7 +3,7 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "/home/alllhvhla/git/develop/c++/game/DungeonMaker/Includes"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",

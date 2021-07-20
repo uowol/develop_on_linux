@@ -52,19 +52,19 @@ std::string LinuxGame::Dungeon::getStringMap(){
         for(int j=0; j<width+2; j++){
             switch(dungeon[i][j]){
                 case NONE:
-                    output+="_";
-                    break;
-                case ROOM:
                     output+="0";
                     break;
+                case ROOM:
+                    output+=" ";
+                    break;
                 case CORRIDOR:
-                    output+="1";
+                    output+=".";
                     break;
                 case WALL:
                     output+="■";
                     break;
                 case LINE:
-                    output+=".";
+                    output+="O";
                     break;
             }
         }
