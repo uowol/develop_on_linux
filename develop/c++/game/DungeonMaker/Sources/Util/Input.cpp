@@ -14,14 +14,18 @@ void LinuxGame::initTerminos(){
 } // init Terminal Input/Output Setting
 
 char LinuxGame::getch(){
-    char ch = -1;
+    char ch = 0; // NULL값(0)을 세팅합니다.
     if(init==false) initTerminos();
 
-    if(!kbhit()) return -1;
-    ch = getchar();
-    if(ch == UP || ch == DOWN || ch == LEFT || ch == RIGHT) return ch;
-    return -1;
-    
+    if(!kbhit()) return ch;
+
+    ch = getchar(); // 입력이 있었다면 입력값을 받아옵니다.
+    if(ch != 27) return ch; // 방향키 입력이 아니라면 NULL(0)값을 리턴합니다.
+    while(!(ch == UP || ch==DOWN || ch==LEFT || ch==RIGHT)){
+        ch = getchar(); // 쓸모없는 값을 지우고 우리가 원하는 값만 받아옵니다.
+    }
+
+    return ch;
 } // input without enter
 
 int LinuxGame::kbhit(){

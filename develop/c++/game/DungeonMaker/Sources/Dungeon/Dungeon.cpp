@@ -7,6 +7,8 @@
 
 LinuxGame::Dungeon::Dungeon(const LinuxGame::Dungeons& dunType, const int iWidth, const int iHeight, const int iDepth){
     std::srand((unsigned int) time(nullptr));
+    this->playerX = 0;
+	this->playerY = 0;
     this->type = dunType;
     this->width = iWidth;
     this->height = iHeight;
@@ -65,6 +67,9 @@ std::string LinuxGame::Dungeon::getStringMap(){
                     break;
                 case LINE:
                     output+="O";
+                    break;
+				case PLAYER:
+					output+="#";
                     break;
             }
         }
@@ -186,6 +191,41 @@ LinuxGame::Edge LinuxGame::Dungeon::BSP(int x1, int y1, int x2, int y2, bool fla
         return Edge{p1.x1, ty1, p2.x2, ty2};
     }
     return Edge{tx1, ty1, tx2, ty2};
+}
+
+const std::vector<std::vector<int>> & LinuxGame::Dungeon::getDungeon() const{ // 함수 내부에서 값을 수정하거나 const가 아닌 함수를 호출할 수 없다.
+    return dungeon;
+}
+
+bool LinuxGame::Dungeon::setPlayer(const int& x, const int& y){
+    if(dungeon[y][x]!=ROOM && dungeon[y][x]!=CORRIDOR) return false; // 복도나 방이 아니라면 플레이어가 올 수 없음
+    if(playerY*playerX != 0){ // 처음을 제외하고 실행
+        preX = playerX;
+        preY = playerY;
+        dungeon[preY][preX] = preBlock;
+    }else{ // 처음에만 실행
+        preX = x;
+        preY = y;
+        preBlock = ROOM;
+    }
+    playerX = x;
+    playerY = y;
+
+    preBlock = dungeon[playerY][playerX];
+    dungeon[playerY][playerX] = PLAYER;
+    return true;
+}
+
+bool LinuxGame::Dungeon::movePlayer(const int& dx, const int& dy){
+    // 만약 맵을 넘어가면 움직이지 않고 false를 반환
+	if(playerX+dx <1 ||playerY+dy <1 || playerX+dx >= width - 1 || playerY+dy >= height - 1) return false;
+
+    // 복도나 방이 아니라면 움직이지 않고 false를 반환, 그렇지 않을 경우 정상으로 움직이고 true 반환
+    return setPlayer(playerX+dx, playerY+dy); 
+}
+
+LinuxGame::Point LinuxGame::Dungeon::getPlayerPosition() const{
+    return {playerX, playerY};
 }
 
 #endif

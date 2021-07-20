@@ -1,0 +1,6 @@
+#ifndef LINUX_GAME_OUTPUT_CPP
+#define LINUX_GAME_OUTPUT_CPP
+
+
+
+#endif

@@ -8,11 +8,14 @@
 #define H true  // 가로분할
 #define V false // 세로분할
 
-#define NONE     0
-#define ROOM     1
-#define CORRIDOR 2
-#define WALL     3
-#define LINE     4
+#define NONE            0
+#define ROOM            1
+#define CORRIDOR        2
+#define WALL            3
+#define LINE            4
+#define PRE_ROOM        5
+#define PRE_CORRIDOR    6
+#define PLAYER          7
 
 
 namespace LinuxGame{
@@ -23,6 +26,11 @@ namespace LinuxGame{
         int y2;
     } Edge; // 구조체 별칭
 
+    typedef struct POINT{
+		int x;
+		int y;
+	} Point;
+
     enum class Dungeons{
         BSP,
         Celluar_Automata
@@ -31,6 +39,7 @@ namespace LinuxGame{
     class Dungeon{
         private:
             int depth, width, height;
+            int playerX, playerY, preX, preY, preBlock;
             Dungeons type;
             std::vector<std::vector<int>> dungeon;
             void init(int);
@@ -39,12 +48,18 @@ namespace LinuxGame{
             int getHeight(){return this->height;}
             int getWidth(){return this->width;}
             int getDepth(){return this->depth;}
-            
+            const std::vector<std::vector<int>> & getDungeon() const;
             bool generateDungeon();
             std::string getStringMap();
 
             Edge BSP(int, int, int, int, bool, int);
 
+            int& operator()(const int& x, const int& y){ return this->dungeon[y][x]; }
+            const int& operator()(const int& x, const int& y) const { return this->dungeon[y][x]; }
+
+            bool setPlayer(const int& x, const int& y);
+            bool movePlayer(const int& dx, const int& dy);
+            Point getPlayerPosition() const;
     };
 }
 

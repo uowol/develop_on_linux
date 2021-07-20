@@ -1,3 +1,5 @@
+#include <Util/Input.hpp>
+#include <Util/Output.hpp>
 #include <Dungeon/Dungeon.hpp>
 
 using namespace std;
@@ -14,10 +16,63 @@ void save(const string& output) {
 
 
 int main(){
-    Dungeon dungeon(Dungeons::BSP, 48, 48, 4);
+    Dungeon dungeon(Dungeons::BSP, 48, 48, 4); // Dungeon 객체를 생성합니다.
+
+    // 던전의 생성
     bool s = dungeon.generateDungeon();
-    if(s){
-        save(dungeon.getStringMap());
+    string ori = dungeon.getStringMap();
+    
+    // 플레이어 생성
+    int x, y;
+    do{
+        x = rand() % dungeon.getWidth();
+        y = rand() % dungeon.getHeight();
+    }while(dungeon(x, y) != ROOM);
+    dungeon.setPlayer(x, y);
+    Point player = dungeon.getPlayerPosition();
+
+    // 화면 출력
+    system("clear");
+    cout << dungeon.getStringMap() << endl;
+
+    // 플레이어 이동
+    while(1){
+        char ch = getch();
+        switch(ch){
+            case UP:
+                dungeon.movePlayer(0,-1);
+                system("clear");
+                cout << dungeon.getStringMap() << endl;
+                break;
+            case DOWN:
+                dungeon.movePlayer(0,1);
+                system("clear");
+                cout << dungeon.getStringMap() << endl;
+                break;
+            case LEFT:
+                dungeon.movePlayer(-1,0);
+                system("clear");
+                cout << dungeon.getStringMap() << endl;
+                break;
+            case RIGHT:
+                dungeon.movePlayer(1,0);
+                system("clear");
+                cout << dungeon.getStringMap() << endl;
+                break;
+            default:
+                // dungeon(0,0) = '!';
+                // system("clear");
+                // cout << dungeon.getStringMap() << endl;
+                break;
+        }
+        // system("clear");
+        // cout << dungeon.getStringMap() << endl;
+        // getchar();
     }
+    
+    // 던전 출력
+    // if(s){
+    //     save(dungeon.getStringMap());
+    // }
     return 0;
 }
