@@ -26,8 +26,8 @@ void LinuxGame::Dungeon::init(int tile){
             this->dungeon[i][j]=WALL;
         }
     }
-    for(int i=1; i<height+1; i++){
-        for(int j=1; j<width+1; j++){
+    for(int i=1; i<=height; i++){
+        for(int j=1; j<=width; j++){
             this->dungeon[i][j]=tile;
         }
     }
@@ -63,7 +63,7 @@ std::string LinuxGame::Dungeon::getStringMap(){
                     output+=".";
                     break;
                 case WALL:
-                    output+="■";
+                    output+="W";
                     break;
                 case LINE:
                     output+="O";
