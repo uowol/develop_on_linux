@@ -5,14 +5,18 @@
 #include <Dungeon/Dungeon.hpp>
 
 
-LinuxGame::Dungeon::Dungeon(const LinuxGame::Dungeons& dunType, const int iWidth, const int iHeight, const int iDepth){
+LinuxGame::Dungeon::Dungeon(const LinuxGame::Dungeons& dunType, const int iWidth, const int iHeight, const int iDepth, const int iNum_monster){
     std::srand((unsigned int) time(nullptr));
-    this->playerX = 0;
-	this->playerY = 0;
+    this->player.x = 0;
+	this->player.y = 0;
     this->type = dunType;
     this->width = iWidth;
     this->height = iHeight;
     this->depth = iDepth;
+    this->monsters.resize(iNum_monster);
+    this->preMonsterX.resize(iNum_monster);
+    this->preMonsterY.resize(iNum_monster);
+    this->preMonsterBlock.resize(iNum_monster);
     this->dungeon.resize(iHeight+2);
     for(int i = 0; i<iHeight+2; i++){
         this->dungeon[i].resize(iWidth+2);
@@ -69,7 +73,10 @@ std::string LinuxGame::Dungeon::getStringMap(){
                     output+="O";
                     break;
 				case PLAYER:
-					output+="#";
+					output+="p";
+                    break;
+				case MONSTER:
+					output+="m";
                     break;
             }
         }
@@ -199,33 +206,70 @@ const std::vector<std::vector<int>> & LinuxGame::Dungeon::getDungeon() const{ //
 
 bool LinuxGame::Dungeon::setPlayer(const int& x, const int& y){
     if(dungeon[y][x]!=ROOM && dungeon[y][x]!=CORRIDOR) return false; // 복도나 방이 아니라면 플레이어가 올 수 없음
-    if(playerY*playerX != 0){ // 처음을 제외하고 실행
-        preX = playerX;
-        preY = playerY;
+    if(player.y*player.x != 0){ // 처음을 제외하고 실행
+        preX = player.x;
+        preY = player.y;
         dungeon[preY][preX] = preBlock;
     }else{ // 처음에만 실행
         preX = x;
         preY = y;
         preBlock = ROOM;
     }
-    playerX = x;
-    playerY = y;
+    player.x = x;
+    player.y = y;
 
-    preBlock = dungeon[playerY][playerX];
-    dungeon[playerY][playerX] = PLAYER;
+    preBlock = dungeon[player.y][player.x];
+    dungeon[player.y][player.x] = PLAYER;
     return true;
 }
 
 bool LinuxGame::Dungeon::movePlayer(const int& dx, const int& dy){
     // 만약 맵을 넘어가면 움직이지 않고 false를 반환
-	if(playerX+dx <1 ||playerY+dy <1 || playerX+dx >= width - 1 || playerY+dy >= height - 1) return false;
+	if(player.x+dx <1 ||player.y+dy <1 || player.x+dx >= width - 1 || player.y+dy >= height - 1) return false;
 
     // 복도나 방이 아니라면 움직이지 않고 false를 반환, 그렇지 않을 경우 정상으로 움직이고 true 반환
-    return setPlayer(playerX+dx, playerY+dy); 
+    return setPlayer(player.x+dx, player.y+dy); 
 }
 
 LinuxGame::Point LinuxGame::Dungeon::getPlayerPosition() const{
-    return {playerX, playerY};
+    return player;
+}
+
+bool LinuxGame::Dungeon::setMonster(const int& idx, const int& x, const int& y){
+    if(dungeon[y][x]!=ROOM && dungeon[y][x]!=CORRIDOR) return false; // 복도나 방이 아니라면 플레이어가 올 수 없음
+    if(monsters[idx].y*monsters[idx].x != 0){ // 처음을 제외하고 실행
+        preMonsterX[idx] = monsters[idx].x;
+        preMonsterY[idx] = monsters[idx].y;
+        dungeon[preMonsterY[idx]][preMonsterX[idx]] = preMonsterBlock[idx];
+    }else{ // 처음에만 실행
+        preMonsterX[idx] = x;
+        preMonsterY[idx] = y;
+        preMonsterBlock[idx] = ROOM;
+    }
+    monsters[idx].x = x;
+    monsters[idx].y = y;
+
+    preMonsterBlock[idx] = dungeon[monsters[idx].y][monsters[idx].x];
+    dungeon[monsters[idx].y][monsters[idx].x] = MONSTER;
+    return true;
+}
+
+bool LinuxGame::Dungeon::moveMonster(const int& idx, const int& dx, const int& dy){
+    // 만약 맵을 넘어가면 움직이지 않고 false를 반환
+	if(monsters[idx].x+dx <1 ||monsters[idx].y+dy <1 || monsters[idx].x+dx >= width - 1 || monsters[idx].y+dy >= height - 1) return false;
+
+    // 복도나 방이 아니라면 움직이지 않고 false를 반환, 그렇지 않을 경우 정상으로 움직이고 true 반환
+    return setMonster(idx, monsters[idx].x+dx, monsters[idx].y+dy); 
+
+}
+
+std::vector<LinuxGame::Point> LinuxGame::Dungeon::getMonsterPositions() const{
+    // std::vector<Point> vMonster;
+    // vMonster.resize(this->monsters.size());
+    // for(int i=0; i<monsters.size(); i++){
+    //     vMonster[i] = {monsters[i].x, monsters[i].y};
+    // }
+    return monsters;
 }
 
 #endif

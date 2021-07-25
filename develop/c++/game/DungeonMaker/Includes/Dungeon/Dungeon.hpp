@@ -16,6 +16,7 @@
 #define PRE_ROOM        5
 #define PRE_CORRIDOR    6
 #define PLAYER          7
+#define MONSTER         8
 
 
 namespace LinuxGame{
@@ -39,12 +40,15 @@ namespace LinuxGame{
     class Dungeon{
         private:
             int depth, width, height;
-            int playerX, playerY, preX, preY, preBlock;
+            int preX, preY, preBlock;
+            std::vector<int> preMonsterX, preMonsterY, preMonsterBlock;
+            std::vector<POINT> monsters = {};
+            POINT player = {};
             Dungeons type;
             std::vector<std::vector<int>> dungeon;
             void init(int);
         public:
-            Dungeon(const Dungeons&, const int, const int, const int);
+            Dungeon(const Dungeons&, const int, const int, const int, const int);
             int getHeight(){return this->height;}
             int getWidth(){return this->width;}
             int getDepth(){return this->depth;}
@@ -60,6 +64,10 @@ namespace LinuxGame{
             bool setPlayer(const int& x, const int& y);
             bool movePlayer(const int& dx, const int& dy);
             Point getPlayerPosition() const;
+
+            bool setMonster(const int& idx, const int& x, const int& y);
+            bool moveMonster(const int& idx, const int& dx, const int& dy);
+            std::vector<Point> getMonsterPositions() const;
     };
 }
 
