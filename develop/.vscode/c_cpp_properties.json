@@ -3,7 +3,7 @@
         {
             "name": "Linux",
             "includePath": [
-                "/home/alllhvhla/git/develop/c++/game/DungeonMaker/Includes"
+                "/home/alllhvhla/git/develop/c++/LinuxTerminalGame/MapGenerator/Includes"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",
