@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body{
+                padding: 0;
+                margin: 0;
+                width: 100vw;
+                height: 100vh;
+                position: absolute;
+            }
+            #container{
+                left: 50%;
+                top: 50%;
+                width: 100%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+            }
+            form{
+                width: 100%;
+                background-color: orange;
+                display: flex;
+                flex-direction: column;
+            }
+            .input-title{
+                display: inline-block;
+                text-align: right;
+                padding-right: 10px;
+                min-width:100px;
+            }
+            #ipt_contents{
+                margin: 10px;
+                height: 100px;
+                padding: 20px;
+                font-size: 2em;
+            }
+            #btn_summit{
+                height: 50px;
+            }
+            .vbox{
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <script>
+        document.cookie = "JSESSIONID=oNkEfzMB45F1kXZfvFArDUDkPJlomcxhDXM7wKYR9AqX9yt7pjpIJ3cRcqbBk8xv.AF1302_servlet_CONT21"
+        document.charset = 'utf-8'
+    </script>
+    <body>
+        <div id='container' style="position: absolute;">
+            <h1>🍊 감귤맛 군인아저씨에게 한 마디 🍊</h1>
+            <form target="iframe" id='form' action="https://www.airforce.mil.kr/user/emailPicSaveEmail.action" method="post">
+                <input id="ipt_contents" type="text" name="contents"><br>
+                <div class="vbox">
+                    <span class="input-title">보내는 이</span><input id="ipt_name" type="text" name="senderName"><br>
+                    <span class="input-title">우편번호</span><input id="ipt_zipcode" type="text" name="senderZipcode"><br>
+                    <span class="input-title">주소</span><input id="ipt_addr1" type="text" name="senderAddr1"><br>
+                </div>
+                <input type="text" name="siteId" value="last2" hidden><br>
+                <input type="text" name="command2" value="writeEmail" hidden><br>
+                <input type="text" name="relationship" value="친구 봇" hidden><br>
+                <input type="text" id="ipt_title" name="title" hidden><br>
+                <input type="text" value="SehyeonTheLove" id='ipt_password' name="password" hidden><br>    
+                <input type="button" id="btn_summit" onclick="post()" value="보내기">
+            </form>
+            <iframe name='iframe' width='0' height='0' frameborder='0'></iframe>
+            <a href="https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub&dum=dum&command2=getEmailList">내가 쓴 편지 보러가기!</a>
+        </div>
+        <form target='' id="init" action="https://www.airforce.mil.kr/user/emailPicEmailIntro.action" method="post">
+            <input type="text" name="siteId" value="last2" hidden>
+            <input type="text" name="command2" value="getEmailList" hidden>
+            <input type="text" name="memberSeq" value="271979794" hidden>
+            <input type="text" name="searchName" value="박세현" hidden>
+            <input type="text" name="searchBirth" value="19990810" hidden>
+        </form>
+        <script>
+            (function(){
+                init.submit()
+                alert("초기화 완료")
+            })()
+            String.prototype.format = function() {
+                var formatted = this;
+                for( var arg in arguments ) {
+                    formatted = formatted.replace("{" + arg + "}", arguments[arg]);
+                }
+                return formatted;
+            };
+            
+            const form = document.getElementById('form');
+            const post = ()=>{
+                ipt_title.value = "'{0}'님이 보낸 편지입니다.".format(ipt_name.value) 
+                ipt_contents.value += '　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　 \r\n== 본 편지는 받는 이의 취향을 고려하여 봇이 작성하였습니다. =='
+                form.submit();
+                alert("편지가 정상적으로 보내졌습니다 :D\n초기 비밀번호는 'SehyeonTheLove'이므로 수정 시 참고바랍니다.")
+            }
+        </script>
+    </body>
+</html>
