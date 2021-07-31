@@ -1,13 +1,15 @@
-#ifndef TEMPO_CPP
+#ifndef LINUX_GAME_RHYTHM_CPP
 
 #include <chrono>
 #include <iostream>
 #include <sys/time.h>
 #include <ctime>
 
-namespace LinuxGame{
-
-}
+#define PERPECT 4
+#define GREAT   3
+#define GOOD    2
+#define BAD     1
+#define MISS    0
 
 using namespace std;
 

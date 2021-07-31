@@ -3,7 +3,7 @@
         {
             "name": "Linux",
             "includePath": [
-                "/home/alllhvhla/git/develop/c++/LinuxTerminalGame/MapGenerator/Includes"
+                "/home/alllhvhla/git/develop/c++/LinuxTerminalGame/RhythmGame/Includes"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",

@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Includes/Utils/input.hpp
+termios.h
+-
+iostream
+-
+unistd.h
+-
+sys/types.h
+-
+sys/time.h
+-
+
+../Includes/Utils/output.hpp
+
+../Includes/Utils/timer.hpp
+chrono
+-
+iostream
+-
+sys/time.h
+-
+ctime
+-
+
+/home/alllhvhla/git/develop/c++/LinuxTerminalGame/RhythmGame/src/main.cpp
+Utils/timer.hpp
+-
+Utils/input.hpp
+-
+Utils/output.hpp
+-
+thread
+-
+
