@@ -16,8 +16,9 @@ namespace LinuxGame{
     static bool init = false;
 
     void initTermios(void);
-    int kbhit(void);
+    void resetTermios(void);
     char getch(void);
+    int kbhit(void);
 }
 
 #endif

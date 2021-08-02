@@ -29,14 +29,20 @@ sys/time.h
 -
 ctime
 -
+thread
+-
+mutex
+-
 
-/home/alllhvhla/git/develop/c++/LinuxTerminalGame/RhythmGame/src/main.cpp
+/home/alllhvhla/git/develop/c++/LinuxTerminalGame/RhythmGame/Sources/Utils/timer.cpp
 Utils/timer.hpp
 -
+
+/home/alllhvhla/git/develop/c++/LinuxTerminalGame/RhythmGame/src/main.cpp
 Utils/input.hpp
 -
 Utils/output.hpp
 -
-thread
+Utils/timer.hpp
 -
 

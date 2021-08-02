@@ -6,6 +6,7 @@ CMakeFiles/RhythmGame.dir/Sources/Utils/input.cpp.o: ../Sources/Utils/input.cpp
 
 CMakeFiles/RhythmGame.dir/Sources/Utils/output.cpp.o: ../Sources/Utils/output.cpp
 
+CMakeFiles/RhythmGame.dir/Sources/Utils/timer.cpp.o: ../Includes/Utils/timer.hpp
 CMakeFiles/RhythmGame.dir/Sources/Utils/timer.cpp.o: ../Sources/Utils/timer.cpp
 
 CMakeFiles/RhythmGame.dir/src/main.cpp.o: ../Includes/Utils/input.hpp
