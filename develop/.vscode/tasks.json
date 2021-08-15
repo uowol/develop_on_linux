@@ -18,10 +18,7 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "detail": "컴파일러: /usr/bin/cpp"
         },
         {
@@ -33,7 +30,7 @@
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
-                "-lpthread",
+                "-lpthread"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -43,6 +40,15 @@
             ],
             "group": "build",
             "detail": "디버거에서 생성된 작업입니다."
+        },
+        {
+            "type": "R",
+            "problemMatcher": [],
+            "label": "R: Install",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ],
     "version": "2.0.0"
