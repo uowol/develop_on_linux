@@ -1,0 +1,45 @@
+### 목표 : 베이지안 곡선피팅 1 - 정규화 유도해보기
+
+N = 10  # 관측값의 개수
+M = 9   # 곡선 피팅 다항식의 차수
+# lambda = exp(1)^(-18)   # ln(lambda) = -18
+beta = 11.1     # 관측값의 정밀도, 관측값이 평균이 y(x,w) 분산이 beta^(-1)의 정규분포를 따른다고 가정합니다.
+alpha = 0.005   # 계수의 정밀도, 계수가 평균이 0 분산이 alpha^(-1)의 정규분포를 따른다고 가정합니다.
+lambda = alpha/beta # alpha와 beta값으로부터 lambda를 유도하여 정규화 식을 유도할 수 있습니다.
+
+### 아래는 이전과 동일합니다.
+
+# 관측값을 랜덤하게 생성해줍니다.
+x = sample(seq(0,1, by=1/N), size=N, replace=F)
+t = sin(2*x*pi) + rnorm(N, sd=0.1)      # 평균 0, 분산 0.1의 정규분포를 따르는 노이즈를 주었습니다.
+plot(t~x, xlim=c(0,1), ylim=c(-2, 2))   # 그래프를 그려 분포를 보여줍니다.
+
+# N개의 학습데이터를 포함한 (w의)계수행렬을 만들어줍니다.
+X = matrix(0, nrow=N, ncol=M+1) 
+for(i in 1:N){
+    for(j in 1:(M+1)){
+        X[i,j] = x[i]^(j-1)
+    }
+}
+# 역함수 계산 시, 허용 오차를 넓게 주지 않으면 오류가 발생할 수 있습니다.
+Lambda = lambda * diag(N)   # 아래 행렬식을 미분하는데 활용하기 위하여 변형시켜줍니다.
+weight = solve(t(X) %*% X, tol=1e-17) %*% t(X) %*% t    # 최소값을 얻을 수 있는 극소점 w를 구해줍니다.
+weight_reg = solve(t(X) %*% X + Lambda, tol=1e-17) %*% t(X) %*% t   # 정규화를 활용해 과적합 문제를 방지해줍니다.
+y = function(x){
+    res = 0
+    for(i in 1:(M+1)){
+        res = res + weight[i]*x^(i-1)
+    }
+    return(res)
+}
+y_reg = function(x){
+    res = 0
+    for(i in 1:(M+1)){
+        res = res + weight_reg[i]*x^(i-1)
+    }
+    return(res)
+}
+
+lines(seq(0,1, by=0.01), y(seq(0,1, by=0.01)))
+lines(seq(0,1, by=0.01), y_reg(seq(0,1, by=0.01)), col='blue')      # 정규화를 활용해 과적합문제가 완화된 것을 확인할 수 있습니다.
+lines(seq(0,1, by=0.01), sin(2*pi*seq(0,1, by=0.01)), col='red')    # 일반화가 잘 되었는지 관측 모델과 비교해봅니다.
