@@ -17,7 +17,7 @@ for(i in 1:N){
 }
 # 역함수 계산 시, 허용 오차를 넓게 주지 않으면 오류가 발생할 수 있습니다.
 lambda = exp(1)^(-18)   # ln(lambda) = -18
-Lambda = lambda * diag(N)   # 아래 행렬식을 미분하는데 활용하기 위하여 변형시켜줍니다.
+Lambda = lambda * diag(M+1)   # 아래 행렬식을 미분하는데 활용하기 위하여 변형시켜줍니다.
 weight = solve(t(X) %*% X, tol=1e-17) %*% t(X) %*% t    # 최소값을 얻을 수 있는 극소점 w를 구해줍니다.
 weight_reg = solve(t(X) %*% X + Lambda, tol=1e-17) %*% t(X) %*% t   # 정규화를 활용해 과적합 문제를 방지해줍니다.
 y = function(x){
