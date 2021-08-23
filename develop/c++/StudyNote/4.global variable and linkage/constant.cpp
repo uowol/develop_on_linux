@@ -1,0 +1,1 @@
+static const double g_gravity = 9.8;    // static 변수는 선언된 소스 파일 외에서 접근할 수 없다.
