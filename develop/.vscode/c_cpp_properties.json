@@ -3,7 +3,7 @@
         {
             "name": "Linux",
             "includePath": [
-                "/home/alllhvhla/git/develop/c++/LinuxTerminalGame/RhythmGame/Includes"
+                "/home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/Includes"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",

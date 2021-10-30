@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Includes/Snake.hpp
+iostream
+-
+queue
+-
+
+../Includes/Utils/Input.hpp
+termios.h
+-
+unistd.h
+-
+iostream
+-
+
+/home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/src/Main.cpp
+Utils/Input.hpp
+-
+Snake.hpp
+-
+
