@@ -142,6 +142,33 @@ SnakeGame/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/build
 .PHONY : SnakeGame/fast
 
+Sources/Map.o: Sources/Map.cpp.o
+
+.PHONY : Sources/Map.o
+
+# target to build an object file
+Sources/Map.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/Sources/Map.cpp.o
+.PHONY : Sources/Map.cpp.o
+
+Sources/Map.i: Sources/Map.cpp.i
+
+.PHONY : Sources/Map.i
+
+# target to preprocess a source file
+Sources/Map.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/Sources/Map.cpp.i
+.PHONY : Sources/Map.cpp.i
+
+Sources/Map.s: Sources/Map.cpp.s
+
+.PHONY : Sources/Map.s
+
+# target to generate assembly for a file
+Sources/Map.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/Sources/Map.cpp.s
+.PHONY : Sources/Map.cpp.s
+
 Sources/Snake.o: Sources/Snake.cpp.o
 
 .PHONY : Sources/Snake.o
@@ -196,6 +223,33 @@ Sources/Utils/Input.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/Sources/Utils/Input.cpp.s
 .PHONY : Sources/Utils/Input.cpp.s
 
+Sources/Utils/Output.o: Sources/Utils/Output.cpp.o
+
+.PHONY : Sources/Utils/Output.o
+
+# target to build an object file
+Sources/Utils/Output.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/Sources/Utils/Output.cpp.o
+.PHONY : Sources/Utils/Output.cpp.o
+
+Sources/Utils/Output.i: Sources/Utils/Output.cpp.i
+
+.PHONY : Sources/Utils/Output.i
+
+# target to preprocess a source file
+Sources/Utils/Output.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/Sources/Utils/Output.cpp.i
+.PHONY : Sources/Utils/Output.cpp.i
+
+Sources/Utils/Output.s: Sources/Utils/Output.cpp.s
+
+.PHONY : Sources/Utils/Output.s
+
+# target to generate assembly for a file
+Sources/Utils/Output.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/Sources/Utils/Output.cpp.s
+.PHONY : Sources/Utils/Output.cpp.s
+
 src/Main.o: src/Main.cpp.o
 
 .PHONY : src/Main.o
@@ -232,12 +286,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... SnakeGame"
+	@echo "... Sources/Map.o"
+	@echo "... Sources/Map.i"
+	@echo "... Sources/Map.s"
 	@echo "... Sources/Snake.o"
 	@echo "... Sources/Snake.i"
 	@echo "... Sources/Snake.s"
 	@echo "... Sources/Utils/Input.o"
 	@echo "... Sources/Utils/Input.i"
 	@echo "... Sources/Utils/Input.s"
+	@echo "... Sources/Utils/Output.o"
+	@echo "... Sources/Utils/Output.i"
+	@echo "... Sources/Utils/Output.s"
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"

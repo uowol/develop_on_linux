@@ -102,9 +102,35 @@ CMakeFiles/SnakeGame.dir/Sources/Utils/Input.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SnakeGame.dir/Sources/Utils/Input.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/Sources/Utils/Input.cpp -o CMakeFiles/SnakeGame.dir/Sources/Utils/Input.cpp.s
 
+CMakeFiles/SnakeGame.dir/Sources/Utils/Output.cpp.o: CMakeFiles/SnakeGame.dir/flags.make
+CMakeFiles/SnakeGame.dir/Sources/Utils/Output.cpp.o: ../Sources/Utils/Output.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SnakeGame.dir/Sources/Utils/Output.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SnakeGame.dir/Sources/Utils/Output.cpp.o -c /home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/Sources/Utils/Output.cpp
+
+CMakeFiles/SnakeGame.dir/Sources/Utils/Output.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SnakeGame.dir/Sources/Utils/Output.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/Sources/Utils/Output.cpp > CMakeFiles/SnakeGame.dir/Sources/Utils/Output.cpp.i
+
+CMakeFiles/SnakeGame.dir/Sources/Utils/Output.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SnakeGame.dir/Sources/Utils/Output.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/Sources/Utils/Output.cpp -o CMakeFiles/SnakeGame.dir/Sources/Utils/Output.cpp.s
+
+CMakeFiles/SnakeGame.dir/Sources/Map.cpp.o: CMakeFiles/SnakeGame.dir/flags.make
+CMakeFiles/SnakeGame.dir/Sources/Map.cpp.o: ../Sources/Map.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SnakeGame.dir/Sources/Map.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SnakeGame.dir/Sources/Map.cpp.o -c /home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/Sources/Map.cpp
+
+CMakeFiles/SnakeGame.dir/Sources/Map.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SnakeGame.dir/Sources/Map.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/Sources/Map.cpp > CMakeFiles/SnakeGame.dir/Sources/Map.cpp.i
+
+CMakeFiles/SnakeGame.dir/Sources/Map.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SnakeGame.dir/Sources/Map.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/Sources/Map.cpp -o CMakeFiles/SnakeGame.dir/Sources/Map.cpp.s
+
 CMakeFiles/SnakeGame.dir/Sources/Snake.cpp.o: CMakeFiles/SnakeGame.dir/flags.make
 CMakeFiles/SnakeGame.dir/Sources/Snake.cpp.o: ../Sources/Snake.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SnakeGame.dir/Sources/Snake.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SnakeGame.dir/Sources/Snake.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SnakeGame.dir/Sources/Snake.cpp.o -c /home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/Sources/Snake.cpp
 
 CMakeFiles/SnakeGame.dir/Sources/Snake.cpp.i: cmake_force
@@ -119,6 +145,8 @@ CMakeFiles/SnakeGame.dir/Sources/Snake.cpp.s: cmake_force
 SnakeGame_OBJECTS = \
 "CMakeFiles/SnakeGame.dir/src/Main.cpp.o" \
 "CMakeFiles/SnakeGame.dir/Sources/Utils/Input.cpp.o" \
+"CMakeFiles/SnakeGame.dir/Sources/Utils/Output.cpp.o" \
+"CMakeFiles/SnakeGame.dir/Sources/Map.cpp.o" \
 "CMakeFiles/SnakeGame.dir/Sources/Snake.cpp.o"
 
 # External object files for target SnakeGame
@@ -126,10 +154,12 @@ SnakeGame_EXTERNAL_OBJECTS =
 
 ../bin/SnakeGame: CMakeFiles/SnakeGame.dir/src/Main.cpp.o
 ../bin/SnakeGame: CMakeFiles/SnakeGame.dir/Sources/Utils/Input.cpp.o
+../bin/SnakeGame: CMakeFiles/SnakeGame.dir/Sources/Utils/Output.cpp.o
+../bin/SnakeGame: CMakeFiles/SnakeGame.dir/Sources/Map.cpp.o
 ../bin/SnakeGame: CMakeFiles/SnakeGame.dir/Sources/Snake.cpp.o
 ../bin/SnakeGame: CMakeFiles/SnakeGame.dir/build.make
 ../bin/SnakeGame: CMakeFiles/SnakeGame.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../bin/SnakeGame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../bin/SnakeGame"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SnakeGame.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

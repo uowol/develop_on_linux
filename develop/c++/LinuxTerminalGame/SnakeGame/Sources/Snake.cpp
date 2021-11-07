@@ -45,6 +45,7 @@ namespace LinuxGame{
             qBody.push(std::make_pair(x-1, y));
         }
     };
+
     int check(int x, int y){
         return true;
     };

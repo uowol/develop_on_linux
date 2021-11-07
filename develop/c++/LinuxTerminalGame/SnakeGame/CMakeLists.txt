@@ -12,6 +12,8 @@ add_executable(
     SnakeGame
 	src/Main.cpp
 	${SnakeGame_SOURCE_DIR}/Utils/Input.cpp
+	${SnakeGame_SOURCE_DIR}/Utils/Output.cpp
+	${SnakeGame_SOURCE_DIR}/Map.cpp
 	${SnakeGame_SOURCE_DIR}/Snake.cpp
 )
 

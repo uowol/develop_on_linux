@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../Includes/Map.hpp
+iostream
+-
+
 ../Includes/Snake.hpp
 iostream
 -
@@ -20,8 +24,22 @@ unistd.h
 iostream
 -
 
+../Includes/Utils/Output.hpp
+iostream
+-
+string
+-
+vector
+-
+sstream
+-
+
 /home/alllhvhla/git/develop_on_linux/develop/c++/LinuxTerminalGame/SnakeGame/src/Main.cpp
 Utils/Input.hpp
+-
+Utils/Output.hpp
+-
+Map.hpp
 -
 Snake.hpp
 -
