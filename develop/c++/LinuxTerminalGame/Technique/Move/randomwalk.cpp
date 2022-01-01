@@ -55,7 +55,7 @@ int main(){
     while(true){
         while(!move(dist(gen)));
         show();
-        sleep(1);
+        sleep(1);   // 밀리초 또는 입력, 그리고 스레드로 구현하면 더 매끄러울 듯.
     }
 
     // std::cout << dist(gen) << std::endl;
