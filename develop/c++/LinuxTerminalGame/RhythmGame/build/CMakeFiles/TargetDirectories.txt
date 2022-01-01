@@ -1,3 +1,0 @@
-/home/alllhvhla/git/develop/c++/LinuxTerminalGame/RhythmGame/build/CMakeFiles/rebuild_cache.dir
-/home/alllhvhla/git/develop/c++/LinuxTerminalGame/RhythmGame/build/CMakeFiles/edit_cache.dir
-/home/alllhvhla/git/develop/c++/LinuxTerminalGame/RhythmGame/build/CMakeFiles/RhythmGame.dir

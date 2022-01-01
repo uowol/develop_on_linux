@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -O3 -DNDEBUG CMakeFiles/RhythmGame.dir/src/main.cpp.o CMakeFiles/RhythmGame.dir/Sources/Utils/input.cpp.o CMakeFiles/RhythmGame.dir/Sources/Utils/output.cpp.o CMakeFiles/RhythmGame.dir/Sources/Utils/timer.cpp.o -o ../bin/RhythmGame  -lpthread 
