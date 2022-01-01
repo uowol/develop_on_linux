@@ -56,15 +56,15 @@ char getch(){   // for arrow key event
     return ch;
 }
 
-using namespace std;
+// using namespace std;
 
-int main(){
-    while(1){
-        int ch = getch();
-        if(ch == 10) break;
-        if(ch != 0)
-            cout << ch << '\n';
-    }
-    terminalTermios();
-    return 0;
-}
+// int main(){
+//     while(1){
+//         int ch = getch();
+//         if(ch == 10) break;
+//         if(ch != 0)
+//             cout << ch << '\n';
+//     }
+//     terminalTermios();
+//     return 0;
+// }
