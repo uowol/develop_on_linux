@@ -63,15 +63,15 @@ class OutputBuffer{
 
 // 예시
 
-using namespace std;
+// using namespace std;
 
-int main(){
-    srand(time(nullptr));
-    for(int i=0; i<10; i++){
-        int x = rand()%20;
-        int y = rand()%20;
-        gotoxy(x, y);
-        cout << "*";
-    }
-    return 0;   
-}
+// int main(){
+//     srand(time(nullptr));
+//     for(int i=0; i<10; i++){
+//         int x = rand()%20;
+//         int y = rand()%20;
+//         gotoxy(x, y);
+//         cout << "*";
+//     }
+//     return 0;   
+// }
