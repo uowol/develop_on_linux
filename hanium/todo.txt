@@ -1,0 +1,4 @@
+curl -X POST -H "Authorization: Bearer <access-key>" -H "Content-Type: application/json; charset=utf-8" -d @request.json "https://dialogflow.googleapis.com/v2/projects/who-am-i-afhy/agent/sessions/123456789:detectIntent"
+
+1. access key 확보
+2. ...
